@@ -17,5 +17,5 @@ jobs:
             - name: Build Image
               run: docker build . -t example
               
-            - name: Run Unit Teste
+            - name: Run Unit Test
               run: docker run example sh -c "go test"
