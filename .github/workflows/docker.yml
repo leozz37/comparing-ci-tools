@@ -1,0 +1,21 @@
+name: Docker
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Build Image
+              run: docker build . -t example
+              
+            - name: Run Unit Teste
+              run: docker run example sh -c "go test"
