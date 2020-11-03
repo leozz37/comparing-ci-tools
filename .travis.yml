@@ -1,0 +1,8 @@
+dist: focal
+
+services:
+  - docker
+
+script:
+    - docker build . -t example
+    - docker run example sh -c "go test"
